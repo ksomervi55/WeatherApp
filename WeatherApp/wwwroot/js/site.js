@@ -5,17 +5,26 @@
 $("#btnGo").on("click", function () {
     let longitude = $("#longitude").val();
     let latitude = $("#latitude").val();
-    $.ajax({
-        url: "/Home/GetWeather",
-        data: {
-            longitude: longitude,
-            latitude: latitude
-        },
-        success: function (result) {
-            $("#weatherResult").html(result);
-        },
-        error: function () {
-            $("#weatherResult").text("Whoops something went wrong please check your inputs and try again!");
-        }
-    });
+    if (longitude == '' || latitude == '') {
+        $('#errorContainer').text("Please enter two values!");
+        $('#errorContainer').show();
+    }
+    else {
+        $.ajax({
+            url: "/Home/GetWeather",
+            data: {
+                longitude: longitude,
+                latitude: latitude
+            },
+            success: function (result) {
+                $("#weatherResult").html(result);
+            },
+            error: function () {
+                $("#weatherResult").text("Whoops something went wrong please check your inputs and try again!");
+            }
+        });
+    }
+});
+$(".textInput").on("input", function () {
+    $('#errorContainer').hide();
 });

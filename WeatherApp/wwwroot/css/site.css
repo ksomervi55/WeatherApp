@@ -12,7 +12,26 @@ html {
   position: relative;
   min-height: 100%;
 }
-
+.container {
+    width: 60%;
+}
+.btn-primary{
+    float: right;
+}
 body {
   margin-bottom: 60px;
+}
+.inputContainer{
+    margin: 10px 0;
+    width: 64%;
+}
+.textInput{
+    float: right;
+
+}
+.alert{
+    color: red;
+}
+.inputLabel {
+    margin-right: 20px
 }

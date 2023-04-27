@@ -18,7 +18,12 @@ public class HomeController : Controller
     {
         return View();
     }
-
+    /// <summary>
+    /// Creates a new weather model with the latitude and longitude that is passed by an ajax call
+    /// </summary>
+    /// <param name="longitude">user input longitude</param>
+    /// <param name="latitude">user inputed latitude</param>
+    /// <returns>Weather result partial that contains the data returned from the api</returns>
     [HttpGet]
     public IActionResult GetWeather(float longitude, float latitude)
     {
@@ -30,6 +35,7 @@ public class HomeController : Controller
         }
         catch (Exception ex)
         {
+            _logger.LogError(ex.Message);
             return BadRequest(ex.Message);
         }
     }

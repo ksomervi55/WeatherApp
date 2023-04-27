@@ -4,16 +4,22 @@
 @section Scripts {
     <script type="text/javascript" src="~/lib/jquery/jquery.min.js"></script>
 }
-<div class="text-center">
+<div class="container">
     <span>Enter a location and click "Go" to get the temperature.</span>
+    <span class="alert" style="display:none;" id="errorContainer"></span>
     <div>
-        <label>Longitude:</label>
-        <input id="longitude" type="text" inputmode="numeric"/>
-    </div> 
-    <div>
-        <label>Lattitude:</label>
-        <input id="latitude" type="text" inputmode="numeric" />
-        <button id="btnGo" >Go</button>
+        <div class="inputContainer">
+            <label class="inputLabel">Longitude: </label>
+            <input class="textInput" id="longitude" type="text" inputmode="numeric" />
+        </div>
+        <div>
+            <button class="btn-primary" id="btnGo">Go</button>
+        </div>
+        <div class="inputContainer">
+            <label class="inputLabel">Latitude: </label>
+            <input class="textInput" id="latitude" type="text" inputmode="numeric" />
+        </div>
+       
     </div>
     <div id="weatherResult">
     </div>
