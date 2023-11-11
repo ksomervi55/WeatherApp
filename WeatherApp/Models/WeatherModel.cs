@@ -27,6 +27,7 @@ public class WeatherModel {
     /// <summary>
     /// Method uses the Latitude and Longitude to make a call to the weather api to set the current temperature
     /// </summary>
+   
     public void GetWeatherData()
     {
         var request = new RestRequest("forecast");

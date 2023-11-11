@@ -1,0 +1,16 @@
+{
+  "version": "1.0.0",
+  "name": "asp.net",
+  "private": true,
+  "devDependencies": {
+    "jest": "^26.6.3",
+    "jest-editor-support": "28.1.0"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "dependencies": {
+    "react-icons": "^4.11.0",
+    "react-pro-sidebar": "^1.1.0-alpha.1"
+  }
+}
