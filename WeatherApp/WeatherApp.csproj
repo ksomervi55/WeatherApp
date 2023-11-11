@@ -11,4 +11,10 @@
     <PackageReference Include="RestSharp" Version="110.2.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Content Remove="wwwroot\tests\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="wwwroot\tests\" />
+  </ItemGroup>
 </Project>
