@@ -1,6 +1,8 @@
 ﻿
-const { handleSuccess } = require('../../wwwroot/js/site');
-const site = require('../../wwwroot/js/site');
+const { getWeather } = require('../../wwwroot/js/site.js');
+const { handleSuccess } = require('../../wwwroot/js/site.js');
+const { handleError } = require('../../wwwroot/js/site.js');
+const { setupElements } = require('../../wwwroot/js/site.js');
 const $ = require('../lib/jquery/dist/jquery');
 describe("Ajax", () => {
   
@@ -10,8 +12,8 @@ describe("Ajax", () => {
     });
     it("Data should load", () => {
         const ajaxSpy = jest.spyOn($, "ajax");
-        const functionType = ( site.handleError.toString())
-        site.getWeather(1, 3);
+        const functionType = (handleError.toString())
+        getWeather(1, 3);
         expect(ajaxSpy).toHaveBeenCalled();
 
     });
@@ -25,7 +27,7 @@ describe("Ajax", () => {
             '  <input id="latitude" value="1"/>' +
             '  <button id="btnGo" />' +
             '</div>';
-        site.handleSuccess("TEST")
+        handleSuccess("TEST")
         expect($("#weatherResult").text()).toBe("TEST");
     });
     test("should handle error", () => {
@@ -37,7 +39,7 @@ describe("Ajax", () => {
             '  <input id="latitude" value="1"/>' +
             '  <button id="btnGo" />' +
             '</div>';
-        site.handleError();
+        handleError();
         let errorText = $("#weatherResult").text();
         expect(errorText).toBe("ERROR");
     });
@@ -51,11 +53,10 @@ test("button clicks", () => {
         '  <button id="btnGo" />' +
         '</div>';
     
-
-    const spy = jest.spyOn(site, "getWeather");
+    let ajax = jest.spyOn($, "ajax");
 
     let btn = document.getElementById("btnGo");
-    site.setUpElements();
+    setupElements();
     btn.click();
-    expect(site.getWeather).toBeCalled();
+    expect(ajax).toBeCalled();
 });
