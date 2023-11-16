@@ -12,10 +12,15 @@
   },
   "dependencies": {
     "react-icons": "^4.11.0",
-    "react-pro-sidebar": "^1.1.0-alpha.1"
+    "react-pro-sidebar": "^1.1.0-alpha.1",
+    "jest": "^26.6.3",
+    "jest-editor-support": "28.1.0"
   },
   "main": "index.js",
   "author": "",
   "license": "ISC",
-  "description": ""
+  "description": "",
+  "vstest": {
+    "testRoot": "./tests"
+  }
 }

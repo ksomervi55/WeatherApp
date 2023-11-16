@@ -1,11 +1,11 @@
-﻿
-const { getWeather } = require('../../wwwroot/js/site.js');
-const { handleSuccess } = require('../../wwwroot/js/site.js');
-const { handleError } = require('../../wwwroot/js/site.js');
-const { setupElements } = require('../../wwwroot/js/site.js');
-const $ = require('../lib/jquery/dist/jquery');
+
+const { getWeather } = require('../../WeatherApp/wwwroot/js/site.js');
+const { handleSuccess } = require('../../WeatherApp/wwwroot/js/site.js');
+const { handleError } = require('../../WeatherApp/wwwroot/js/site.js');
+const { setupElements } = require('../../WeatherApp/wwwroot/js/site.js');
+const $ = require('../../WeatherApp/wwwroot/lib/jquery/dist/jquery');
 describe("Ajax", () => {
-  
+
 
     beforeEach(() => {
         jest.restoreAllMocks();
@@ -47,12 +47,12 @@ describe("Ajax", () => {
 test("button clicks", () => {
     document.body.innerHTML =
         '<div>' +
-    '  <div id="weahterResult"></div>' +
-    '  <input id="longitude" value="2"/>' +
-    '  <input id="latitude" value="1"/>' +
+        '  <div id="weahterResult"></div>' +
+        '  <input id="longitude" value="2"/>' +
+        '  <input id="latitude" value="1"/>' +
         '  <button id="btnGo" />' +
         '</div>';
-    
+
     let ajax = jest.spyOn($, "ajax");
 
     let btn = document.getElementById("btnGo");
